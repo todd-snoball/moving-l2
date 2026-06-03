@@ -11,7 +11,7 @@
   <!-- Self-hosted Inter (variable). Files live in /fonts next to index.html -->
   <link rel="preload" as="font" type="font/woff2" href="fonts/InterVariable.woff2" crossorigin>
   <!-- Preload the LCP hero photo so it loads first -->
-  <link rel="preload" as="image" href="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2F3%2520men%2520loading%2520moving%2520truck.jpg&amp;w=460&amp;fm=webp&amp;q=72" fetchpriority="high">
+  <link rel="preload" as="image" href="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2F3%2520men%2520loading%2520moving%2520truck.jpg&amp;w=560&amp;fm=webp&amp;q=72" fetchpriority="high">
   <style>
 /* ====================================================================
    Snoball Movers Landing Page - Custom Styles
@@ -107,9 +107,9 @@ html, body {
   .snoball-mc-landing h1 { font-size: 52px !important; }
   .sb-hero-left { max-width: 100% !important; }
   .sb-hero-right { max-width: 100% !important; text-align: center !important; }
-  .sb-photo-1 .sb-photo-img { width: 240px !important; height: 172px !important; }
-  .sb-photo-2 .sb-photo-img { width: 200px !important; height: 144px !important; }
-  .sb-photo-2 { margin-left: -36px !important; }
+  .sb-photo-1 .sb-photo-img { width: 248px !important; height: 179px !important; }
+  .sb-photo-2 .sb-photo-img { width: 150px !important; height: 188px !important; }
+  .sb-photo-2 { margin-left: -52px !important; transform: none !important; }
   .sb-hero-proof { position: static !important; left: auto !important; right: auto !important; bottom: auto !important; margin: 20px auto 0 auto !important; padding: 12px 16px !important; display: inline-flex !important; }
   .sb-flywheel {
     aspect-ratio: auto !important;
@@ -154,8 +154,8 @@ html, body {
    overflows or gets clipped awkwardly */
 @media (max-width: 430px) {
   .sb-photo-1 .sb-photo-img { width: 200px !important; height: 144px !important; }
-  .sb-photo-2 .sb-photo-img { width: 168px !important; height: 124px !important; }
-  .sb-photo-2 { margin-left: -30px !important; }
+  .sb-photo-2 .sb-photo-img { width: 126px !important; height: 158px !important; }
+  .sb-photo-2 { margin-left: -42px !important; }
 }
 
 /* ====================================================================
@@ -169,7 +169,8 @@ html, body {
 }
 
 /* ====================================================================
-   Booking now opens in an iClosed popup (no inline scheduler / facade).
+   Booking CTAs link directly to the iClosed scheduler (no inline embed,
+   no popup, no facade).
    ==================================================================== */
   </style>
 </head>
@@ -209,13 +210,13 @@ html, body {
 <div class="sb-hero-right" style="flex: 1 1 440px; min-width: 300px; max-width: 500px; width: 100%; position: relative;">
 <div class="sb-hero-collage" style="position: relative; display: inline-block;">
 <div class="sb-hero-photos" style="display: flex; align-items: flex-start; gap: 0;">
-<div class="sb-photo-1" style="position: relative; z-index: 1; transform: translateY(-8px);"><img class="sb-photo-img" width="280" height="202" fetchpriority="high" decoding="async" style="display: block; width: 280px; height: 202px; max-width: 100%; border-radius: 10px; object-fit: cover; box-shadow: 0 12px 32px rgba(18, 17, 85, 0.4);" src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2F3%2520men%2520loading%2520moving%2520truck.jpg&amp;w=460&amp;fm=webp&amp;q=72" alt="Three movers loading a moving truck"></div>
-<div class="sb-photo-2" style="position: relative; z-index: 2; margin-left: -40px; transform: translateY(56px); overflow: hidden; border-radius: 10px; box-shadow: 0 12px 32px rgba(18, 17, 85, 0.4);"><img class="sb-photo-img" width="224" height="168" decoding="async" style="display: block; width: 224px; height: 168px; max-width: 100%; object-fit: cover; transform: scale(1.1); transform-origin: center;" src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2Fmoving%2520company%2520operator%25202.jpg&amp;w=380&amp;fm=webp&amp;q=72" alt="Happy moving company operator at a desk"></div>
+<div class="sb-photo-1" style="position: relative; z-index: 1; transform: translateY(-8px);"><img class="sb-photo-img" width="336" height="242" fetchpriority="high" decoding="async" style="display: block; width: 336px; height: 242px; max-width: 100%; border-radius: 10px; object-fit: cover; box-shadow: 0 12px 32px rgba(18, 17, 85, 0.4);" src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2F3%2520men%2520loading%2520moving%2520truck.jpg&amp;w=560&amp;fm=webp&amp;q=72" alt="Three movers loading a moving truck"></div>
+<div class="sb-photo-2" style="position: relative; z-index: 2; margin-left: -64px; transform: translateY(56px); overflow: hidden; border-radius: 10px; border: 4px solid #ffffff; box-shadow: 0 16px 40px rgba(18, 17, 85, 0.45);"><img class="sb-photo-img" width="180" height="226" decoding="async" style="display: block; width: 180px; height: 226px; max-width: 100%; object-fit: cover; object-position: center 18%; transform: scale(1.15); transform-origin: center top;" src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2FMeggan%2520S%2520profile%25202.png&amp;w=320&amp;fm=webp&amp;q=72" alt="Meggan from New City Moving"></div>
 </div>
 </div>
-<div class="sb-hero-proof" style="position: absolute; left: -10px; bottom: -4px; background: #ffffff; border-radius: 14px; padding: 16px 18px; box-shadow: 0 18px 44px rgba(18, 17, 85, 0.3); display: flex; align-items: center; gap: 14px; max-width: 250px; z-index: 3;">
-<div style="font-size: 34px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">$500K<span style="color: #8c7dd0;">+</span></div>
-<div style="font-size: 13px; color: #52535c; line-height: 1.35;"><strong style="color: #272b30;">In referral revenue</strong><br>JK Moving &middot; 280+ referrals</div>
+<div class="sb-hero-proof" style="position: absolute; right: -10px; bottom: -14px; background: #ffffff; border-radius: 14px; padding: 16px 18px; box-shadow: 0 18px 44px rgba(18, 17, 85, 0.3); display: flex; align-items: center; gap: 14px; max-width: 290px; z-index: 3;">
+<div style="font-size: 42px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em; white-space: nowrap;">3-4</div>
+<div style="font-size: 13px; color: #52535c; line-height: 1.35;"><strong style="color: #272b30;">new referrals the first day</strong><br>Meggan S. &middot; New City Moving</div>
 </div>
 </div>
 </div>
@@ -448,16 +449,11 @@ html, body {
      ===================================================================== -->
 <script>
 (function () {
-  // Booking now opens in an iClosed POPUP (no inline iframe in the hero).
-  // EMBED is the public scheduler link for this event. If this page books a
-  // different event later, swap EMBED for the new iClosed link.
-  var EMBED  = 'https://app.iclosed.io/e/snoball/snoball-moving-demo';
-  var WIDGET = 'https://app.iclosed.io/assets/widget.js';
-  // Add ?preview to the URL to stop the widget script from auto-loading.
-  var PREVIEW = location.search.indexOf('preview') !== -1;
-  var requested = false;
+  // CTAs link straight to the iClosed scheduler. This only appends tracking
+  // params to the link so attribution still flows through. No popup, no widget.
+  // If this page books a different event later, swap EMBED for the new link.
+  var EMBED = 'https://app.iclosed.io/e/snoball/snoball-moving-demo';
 
-  // Build the scheduler URL with tracking params pulled from the page URL.
   // For each subid, use a directly-passed subid first, then fall back to the UTM,
   // so it works whether the ad URL carries subid1/2/3 or utm_source/medium/campaign.
   function bookingUrl() {
@@ -472,42 +468,10 @@ html, body {
     return url.toString();
   }
 
-  // Stamp every booking CTA with the iClosed popup attributes (link + type) plus
-  // a plain href fallback carrying the same tracking params. Set BEFORE the widget
-  // script loads, so when it binds it reads the final attribute values.
   var url = bookingUrl();
   var ctas = document.querySelectorAll('.sb-book');
   for (var i = 0; i < ctas.length; i++) {
-    ctas[i].setAttribute('data-iclosed-link', url);
-    ctas[i].setAttribute('data-embed-type', 'popup');
-    ctas[i].setAttribute('href', url);          // fallback if the widget hasn't bound yet
-    ctas[i].setAttribute('target', '_blank');
-    ctas[i].setAttribute('rel', 'noopener');
-  }
-
-  // Inject the iClosed popup widget script once.
-  function loadWidget() {
-    if (requested) return;
-    requested = true;
-    var s = document.createElement('script');
-    s.src = WIDGET;
-    s.async = true;
-    document.body.appendChild(s);
-  }
-
-  // Warm the widget on the first real interaction. Performance tools never
-  // interact, so the third-party script stays out of the PageSpeed run, while
-  // real visitors trigger it the instant they move, scroll, or tap, well before
-  // they click a CTA. The href fallback covers the rare instant click.
-  if (!PREVIEW) {
-    var triggers = ['pointerdown', 'touchstart', 'mousemove', 'scroll', 'keydown', 'wheel'];
-    function onFirst() {
-      for (var t = 0; t < triggers.length; t++) window.removeEventListener(triggers[t], onFirst);
-      loadWidget();
-    }
-    for (var k = 0; k < triggers.length; k++) {
-      window.addEventListener(triggers[k], onFirst, { once: true, passive: true });
-    }
+    ctas[i].setAttribute('href', url);
   }
 })();
 </script>
