@@ -11,7 +11,7 @@
   <!-- Self-hosted Inter (variable). Files live in /fonts next to index.html -->
   <link rel="preload" as="font" type="font/woff2" href="fonts/InterVariable.woff2" crossorigin>
   <!-- Preload the LCP hero photo so it loads first -->
-  <link rel="preload" as="image" href="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2F3%2520men%2520loading%2520moving%2520truck.jpg&amp;w=560&amp;fm=webp&amp;q=72" fetchpriority="high">
+  <link rel="preload" as="image" media="(min-width: 769px)" href="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2F3%2520men%2520loading%2520moving%2520truck.jpg&amp;w=640&amp;fm=webp&amp;q=72" fetchpriority="high">
   <style>
 /* ====================================================================
    Snoball Movers Landing Page - Custom Styles
@@ -107,10 +107,10 @@ html, body {
   .snoball-mc-landing h1 { font-size: 52px !important; }
   .sb-hero-left { max-width: 100% !important; }
   .sb-hero-right { max-width: 100% !important; text-align: center !important; }
-  .sb-photo-1 .sb-photo-img { width: 248px !important; height: 179px !important; }
-  .sb-photo-2 .sb-photo-img { width: 150px !important; height: 188px !important; }
-  .sb-photo-2 { margin-left: -52px !important; transform: none !important; }
-  .sb-hero-proof { position: static !important; left: auto !important; right: auto !important; bottom: auto !important; margin: 20px auto 0 auto !important; padding: 12px 16px !important; display: inline-flex !important; }
+  .sb-collage { position: static !important; width: auto !important; height: auto !important; margin: 0 !important; }
+  .sb-truck { display: none !important; }
+  .sb-meggan { position: static !important; right: auto !important; top: auto !important; width: 250px !important; max-width: 100% !important; margin: 0 !important; }
+  .sb-hero-callout { position: static !important; left: auto !important; top: auto !important; width: fit-content !important; max-width: 100% !important; margin: 16px 0 0 0 !important; text-align: left; }
   .sb-flywheel {
     aspect-ratio: auto !important;
     max-width: 320px !important;
@@ -150,12 +150,9 @@ html, body {
   }
 }
 
-/* Very small screens (<=430px): shrink the hero photo collage so it never
-   overflows or gets clipped awkwardly */
+/* Very small screens (<=430px): keep Meggan's photo within the column */
 @media (max-width: 430px) {
-  .sb-photo-1 .sb-photo-img { width: 200px !important; height: 144px !important; }
-  .sb-photo-2 .sb-photo-img { width: 126px !important; height: 158px !important; }
-  .sb-photo-2 { margin-left: -42px !important; }
+  .sb-meggan { width: 240px !important; }
 }
 
 /* ====================================================================
@@ -193,30 +190,30 @@ html, body {
 <div class="sb-hero-grid" style="max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 56px; align-items: center; justify-content: space-between;">
 <!-- LEFT: simple copy + CTA -->
 <div class="sb-hero-left" style="flex: 1 1 500px; min-width: 300px; max-width: 640px;">
-<div style="display: inline-block; background: rgba(139, 215, 223, 0.12); color: #8bd7df; border: 1px solid rgba(139, 215, 223, 0.45); padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: bold; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 22px;">For Moving Companies</div>
 <h1 style="font-size: 68px; line-height: 1.0; font-weight: 800; margin: 0 0 22px 0; letter-spacing: -0.03em; color: #ffffff;">More Referrals.<br><span style="background-image: linear-gradient(90deg, #8BD7DF 0%, #FF94FB 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: #8bd7df;">Zero Extra Work.</span></h1>
 <p style="font-size: 19px; line-height: 1.55; color: rgba(255, 255, 255, 0.92); margin: 0 0 32px 0; max-width: 500px;">Referrals are your highest-closing, lowest-cost leads. Snoball keeps them coming month after month.</p>
-<div style="margin-bottom: 28px;"><a class="sb-book" href="https://app.iclosed.io/e/snoball/snoball-moving-demo" style="display: inline-block; background: #8BD7DF; color: #121155; font-weight: 800; font-size: 16px; padding: 16px 30px; border-radius: 8px; text-decoration: none; letter-spacing: 0.01em; box-shadow: 0 8px 24px rgba(139, 215, 223, 0.25);">Book Your Demo &rarr;</a></div>
+<div style="margin-bottom: 28px;"><a class="sb-book" href="https://app.iclosed.io/e/snoball/snoball-moving-demo" style="display: inline-block; background: #8BD7DF; color: #121155; font-weight: 800; font-size: 18px; padding: 18px 52px; border-radius: 10px; text-decoration: none; letter-spacing: 0.01em; box-shadow: 0 10px 28px rgba(139, 215, 223, 0.28);">Book Your Demo &rarr;</a></div>
 <!-- G2 social proof badge -->
 <div>
-<div style="display: inline-flex; align-items: center; gap: 14px; padding: 10px 20px 10px 12px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 999px;"><img style="width: 36px; height: 36px; display: block; flex-shrink: 0;" src="/.netlify/images?url=https%3A%2F%2Fs3.us-west-1.amazonaws.com%2Fimages.bestcompany.com%2Fbcbs%2Fsnoball%2Flogos%2Fg2-logo-white.webp&amp;w=120&amp;fm=webp&amp;q=75" alt="G2">
-<div style="color: #ffffff; font-size: 18px; font-weight: bold; line-height: 1;">4.7</div>
-<div style="position: relative; display: inline-block; line-height: 1; font-size: 18px; letter-spacing: 1px;"><span style="color: rgba(255, 255, 255, 0.3);">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span style="position: absolute; top: 0; left: 0; color: #ffffff; overflow: hidden; width: 90%; white-space: nowrap;">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-<div style="color: rgba(255, 255, 255, 0.75); font-size: 14px; line-height: 1; white-space: nowrap;">(70 Reviews)</div>
+<div style="display: inline-flex; align-items: center; gap: 9px; padding: 6px 13px 6px 8px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 999px;"><img style="width: 26px; height: 26px; display: block; flex-shrink: 0;" src="/.netlify/images?url=https%3A%2F%2Fs3.us-west-1.amazonaws.com%2Fimages.bestcompany.com%2Fbcbs%2Fsnoball%2Flogos%2Fg2-logo-white.webp&amp;w=120&amp;fm=webp&amp;q=75" alt="G2">
+<div style="color: #ffffff; font-size: 14px; font-weight: bold; line-height: 1;">4.7</div>
+<div style="position: relative; display: inline-block; line-height: 1; font-size: 14px; letter-spacing: 1px;"><span style="color: rgba(255, 255, 255, 0.3);">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span style="position: absolute; top: 0; left: 0; color: #ffffff; overflow: hidden; width: 90%; white-space: nowrap;">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+<div style="color: rgba(255, 255, 255, 0.75); font-size: 11px; line-height: 1; white-space: nowrap;">(70 Reviews)</div>
 </div>
 </div>
 </div>
-<!-- RIGHT: photo collage + floating proof card -->
-<div class="sb-hero-right" style="flex: 1 1 440px; min-width: 300px; max-width: 500px; width: 100%; position: relative;">
-<div class="sb-hero-collage" style="position: relative; display: inline-block;">
-<div class="sb-hero-photos" style="display: flex; align-items: flex-start; gap: 0;">
-<div class="sb-photo-1" style="position: relative; z-index: 1; transform: translateY(-8px);"><img class="sb-photo-img" width="336" height="242" fetchpriority="high" decoding="async" style="display: block; width: 336px; height: 242px; max-width: 100%; border-radius: 10px; object-fit: cover; box-shadow: 0 12px 32px rgba(18, 17, 85, 0.4);" src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2F3%2520men%2520loading%2520moving%2520truck.jpg&amp;w=560&amp;fm=webp&amp;q=72" alt="Three movers loading a moving truck"></div>
-<div class="sb-photo-2" style="position: relative; z-index: 2; margin-left: -64px; transform: translateY(56px); overflow: hidden; border-radius: 10px; border: 4px solid #ffffff; box-shadow: 0 16px 40px rgba(18, 17, 85, 0.45);"><img class="sb-photo-img" width="180" height="226" decoding="async" style="display: block; width: 180px; height: 226px; max-width: 100%; object-fit: cover; object-position: center 18%; transform: scale(1.15); transform-origin: center top;" src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2FMeggan%2520S%2520profile%25202.png&amp;w=320&amp;fm=webp&amp;q=72" alt="Meggan from New City Moving"></div>
+<!-- RIGHT: staggered collage (movers behind, Meggan + her quote in front) -->
+<div class="sb-hero-right" style="flex: 1 1 440px; min-width: 300px; max-width: 500px; width: 100%;">
+<div class="sb-collage" style="position: relative; width: 400px; max-width: 100%; height: 410px; margin: 0 auto;">
+<picture>
+<source media="(max-width: 768px)" srcset="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2F3%2520men%2520loading%2520moving%2520truck.jpg&amp;w=16&amp;fm=webp&amp;q=40">
+<img class="sb-truck" width="400" height="288" fetchpriority="high" decoding="async" style="display: block; width: 400px; height: 288px; max-width: 100%; border-radius: 10px; object-fit: cover; box-shadow: 0 12px 32px rgba(18, 17, 85, 0.4);" src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2F3%2520men%2520loading%2520moving%2520truck.jpg&amp;w=640&amp;fm=webp&amp;q=72" alt="Three movers loading a moving truck">
+</picture>
+<div class="sb-meggan" style="position: absolute; right: -20px; top: 144px; overflow: hidden; border-radius: 10px; box-shadow: 0 16px 40px rgba(18, 17, 85, 0.45); z-index: 2;"><img width="250" height="178" decoding="async" loading="lazy" style="display: block; width: 250px; height: 178px; max-width: 100%; object-fit: cover; object-position: center 20%;" src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2FMeggan%2520S%2520profile%25202.png&amp;w=440&amp;fm=webp&amp;q=72" alt="Meggan from New City Moving"></div>
+<div class="sb-hero-callout" style="position: absolute; left: -36px; top: 282px; z-index: 3; background: #ffffff; border-radius: 14px; padding: 22px 22px 16px; max-width: 290px; box-shadow: 0 18px 44px rgba(18, 17, 85, 0.32);">
+<div style="font-size: 16px; color: #272b30; line-height: 1.4; font-weight: 500; white-space: nowrap;">&ldquo;We got <span style="font-size: 38px; font-weight: 800; color: #1a39a9; letter-spacing: -0.02em; line-height: 0; vertical-align: -6px; padding: 0 2px;">3-4</span> new referrals<br>the first day.&rdquo;</div>
+<div style="font-size: 12.5px; color: #6c727f; margin-top: 12px;"><strong style="color: #272b30; font-weight: 700;">Meggan</strong>, New City Moving</div>
 </div>
-</div>
-<div class="sb-hero-proof" style="position: absolute; right: -10px; bottom: -14px; background: #ffffff; border-radius: 14px; padding: 16px 18px; box-shadow: 0 18px 44px rgba(18, 17, 85, 0.3); display: flex; align-items: center; gap: 14px; max-width: 290px; z-index: 3;">
-<div style="font-size: 42px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em; white-space: nowrap;">3-4</div>
-<div style="font-size: 13px; color: #52535c; line-height: 1.35;"><strong style="color: #272b30;">new referrals the first day</strong><br>Meggan S. &middot; New City Moving</div>
 </div>
 </div>
 </div>
@@ -311,10 +308,10 @@ html, body {
 <div style="height: 56px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px;"><img style="max-height: 55px; max-width: 207px; width: auto; height: auto; display: block;" src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fbcbs%2Fsnoball%2Flogos%2Fnew-city-moving-logo-lg.webp&amp;w=400&amp;fm=webp&amp;q=75" alt="New City Moving" decoding="async" loading="lazy"></div>
 <div style="font-size: 13px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #6c727f; margin-bottom: 6px;">New City Moving</div>
 <div style="font-size: 36px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em; margin-bottom: 8px;">30<span style="color: #8c7dd0;">+</span></div>
-<div style="font-size: 14px; color: #52535c; line-height: 1.5; margin-bottom: 20px;">New referrals in their first month. Five came on day one. 450+ referrals since then.</div>
+<div style="font-size: 14px; color: #52535c; line-height: 1.5; margin-bottom: 20px;">New referrals in their first month. 3-4 came on day one. 450+ referrals since then.</div>
 <div style="height: 1px; background: #E5E6EB; width: 60%; margin: 0 auto 18px auto;"></div>
 <div style="font-size: 42px; color: #8c7dd0; opacity: 0.5; line-height: 0.5; font-family: Georgia, 'Times New Roman', serif; margin-bottom: 8px; height: 20px;">&ldquo;</div>
-<p style="font-size: 13px; color: #52535c; font-style: italic; line-height: 1.55; margin: 0 0 20px 0;">Ask at the right time. Pay fast and referrers stay excited and keep sending.</p>
+<p style="font-size: 13px; color: #52535c; font-style: italic; line-height: 1.55; margin: 0 0 20px 0;">We got 3-4 new referrals the first day. Pay fast, and referrers stay excited and keep sending.</p>
 <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
 <div style="width: 96px; height: 96px; border-radius: 50%; background-image: url('/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2FMeggan%2520S%2520profile%25202.png&amp;w=200&amp;fm=webp&amp;q=72'); background-size: 165%; background-position: center 22%; border: 3px solid #fff; box-shadow: 0 4px 12px rgba(18, 17, 85, 0.2);" role="img" aria-label="Meggan S."></div>
 <div style="display: flex; flex-direction: column; gap: 2px; align-items: center;">
